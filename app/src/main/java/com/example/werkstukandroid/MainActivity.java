@@ -27,13 +27,15 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+
         switch (item.getItemId()){
             case R.id.item1:
-                Intent intent = new Intent(this, AddKlachtActivity.class);
+                Intent intent = new Intent(MainActivity.this, AddKlachtActivity.class);
                 startActivity(intent);
 
             case R.id.item2:
-                Toast.makeText(this, "er werdt op list geklikt", Toast.LENGTH_SHORT).show();
+                Intent intent2 = new Intent(MainActivity.this, AddKlachtActivity.class);
+                startActivity(intent2);
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
@@ -41,5 +43,8 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
+
+
+
 
 }
