@@ -25,7 +25,7 @@ public class AddKlachtActivity extends AppCompatActivity {
 
        klachtDao.insert(klacht);
 
-       TextView txtStudent = findViewById(R.id.txt_Test);
+
 
         List<Klacht> KlachtenUitDatabank = klachtDao.getAll();
     }
