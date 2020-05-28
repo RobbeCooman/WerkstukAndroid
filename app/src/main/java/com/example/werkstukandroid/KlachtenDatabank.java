@@ -20,8 +20,6 @@ public abstract class KlachtenDatabank extends RoomDatabase {
         return Room.databaseBuilder(context.getApplicationContext(),
                 KlachtenDatabank.class,
                 "klachtendb")
-                .allowMainThreadQueries() // not in final version!
-                .fallbackToDestructiveMigration() // delete en hermaakt de db elke keer als er een wijziging is
                 .build();
     }
 }
