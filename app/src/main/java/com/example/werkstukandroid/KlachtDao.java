@@ -1,6 +1,7 @@
 package com.example.werkstukandroid;
 
 
+import androidx.lifecycle.LiveData;
 import androidx.room.Dao;
 import androidx.room.Delete;
 import androidx.room.Insert;
@@ -22,22 +23,9 @@ public interface KlachtDao {
 
 
     @Query("SELECT * FROM klachten WHERE id = :klachtenId")
-    Klacht getKlachtenById(long klachtenId);
+    LiveData<Klacht> getKlachtenById(long klachtenId);
 
-    @Query("SELECT * FROM klachten")
-    List<Klacht> getAll();
+    @Query("SELECT * FROM klachten ORDER BY onderwerp ASC")
+    LiveData<List<Klacht>> getAllOrderByOnderwerp();
 }
-
-
-//@Query("SELECT * FROM students WHERE id = :studentId")
-//    Student getStudentById(long studentId);
-//
-//    @Query("SELECT * FROM students WHERE voornaam = :studentNaam")
-//    List<Student> getStudentByName(String studentNaam);
-//
-//    @Query("SELECT * FROM students")
-//    List<Student> getAll();
-//
-//    @Query("SELECT * FROM students ORDER BY achternaam")
-//    List<Student> getAllOrderByName();
 

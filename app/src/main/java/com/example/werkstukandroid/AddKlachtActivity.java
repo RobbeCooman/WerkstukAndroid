@@ -26,8 +26,6 @@ public class AddKlachtActivity extends AppCompatActivity {
        klachtDao.insert(klacht);
 
 
-
-        List<Klacht> KlachtenUitDatabank = klachtDao.getAll();
     }
 
 
