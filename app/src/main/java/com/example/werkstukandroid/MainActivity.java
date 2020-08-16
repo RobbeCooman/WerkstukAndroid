@@ -19,8 +19,6 @@ import android.widget.Toast;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 
-import java.util.List;
-
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -35,14 +33,14 @@ public class MainActivity extends AppCompatActivity {
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, ListActivity.class));
+                startActivity(new Intent(MainActivity.this, List.class));
             }
         });
 
         button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, AddKlachtActivity.class));
+                startActivity(new Intent(MainActivity.this, AddKlacht.class));
             }
         });
 
@@ -63,11 +61,11 @@ public class MainActivity extends AppCompatActivity {
 
         switch (item.getItemId()){
             case R.id.item1:
-                Toast.makeText(this, "Item 1 is selected", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(MainActivity.this, AddKlacht.class));
                 return true;
 
             case R.id.item2:
-                Toast.makeText(this, "Item 2 is selected", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(MainActivity.this, List.class));
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
